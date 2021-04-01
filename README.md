@@ -1,3 +1,6 @@
-# caltech-ee148-spring2020-hw01
+####Caltech EE 148: Selected Topics in Computer Vision
+###Spring 2021
+###Professor Pietro Perona
 
-The link to the instructions is available on Piazza.
+###HW01: Red Light Detection
+
