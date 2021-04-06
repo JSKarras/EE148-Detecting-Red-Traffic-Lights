@@ -150,7 +150,7 @@ def normalize_image(img, I):
     return img_normalized 
 
 
-# In[ ]:
+# In[1924]:
 
 
 # Download data
@@ -184,7 +184,7 @@ with open(os.path.join(preds_path,'preds.json'),'w') as f:
     json.dump(preds,f)
 
 
-# In[1922]:
+# In[1928]:
 
 
 '''Show easy or "good" image detection examples
@@ -194,14 +194,14 @@ between the traffic lights and kernel, due to blue sky background, (2) the image
 misleading objects, and (3) the traffic lights are large enough to provide enough pixel-wise 
 similarity with the kernel.
 '''
-easy_indices = [9, 7, 60, 105]
+easy_indices = [9, 7, 60, 105, 57]
 for i in easy_indices:
     I = Image.open(os.path.join(data_path,file_names[i]))
     I = np.asarray(I)
     detect_red_light(I)
 
 
-# In[1918]:
+# In[ ]:
 
 
 '''
@@ -212,7 +212,7 @@ background, (2) the traffic lights are too far away (too small) to provid enough
 between the kernel and image pixels, and (3) there are similar objects that aren't traffic 
 lights in the image.
 '''
-hard_indices = [19, 20, 191]
+hard_indices = [19, 20, 167, 191]
 for i in hard_indices:
     I = Image.open(os.path.join(data_path,file_names[i]))
     I = np.asarray(I)
