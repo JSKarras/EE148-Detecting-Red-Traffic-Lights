@@ -63,11 +63,9 @@ def detect_red_light(I):
     BEGIN YOUR CODE
     '''    
     # Create traffic light kernels from images
-    kernel_path = '/Users/Johanna/Desktop/Computer Vision/hw01/redlight_kernel.png'
-    kernel1 = Image.open(kernel_path).convert(mode='RGB')
-    kernel_path2 = '/Users/Johanna/Desktop/Computer Vision/hw01/redlight_kernel2.png'
-    kernel2 = Image.open(kernel_path2).convert(mode='RGB')
-    kernels = [kernel1]#[kernel1, kernel2]
+    kernel_path = 'redlight_kernel.png'
+    kernel = Image.open(kernel_path).convert(mode='RGB')
+    kernels = [kernel]
     
     # Generate different sizes of kernels
     new_kernels = []
@@ -82,7 +80,7 @@ def detect_red_light(I):
     kernels = [np.asarray(k) for k in new_kernels]
     
     # Specify threshold for acceptable red lights
-    thresholds = [0.2, 0.21, 0.2, 0.19] #[0.03, 0.075, 0.23, 0.4, 0.045, 0.04, 0.09, 0.08] 
+    thresholds = [0.2, 0.21, 0.2, 0.19]  
     
     # Filter image with each kernel
     I_width, I_height = I.shape[1], I.shape[0]
